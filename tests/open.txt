@@ -1,0 +1,25 @@
+* Open for clean document:
+
+* Cancel FileOpenDialog.
+
+* OK FileOpenDialog.
+
+* Open for dirty untitled-document:
+
+** No, I don't want to save.
+
+** Yes, I want to save:
+
+*** Cancel for FileOpenDialog.
+
+*** OK for FileOpenDialog:
+
+* Open for dirty titled-document:
+
+** No, I don't want to save.
+
+** Yes, I want to save:
+
+*** Cancel for FileOpenDialog.
+
+*** OK for FileOpenDialog:

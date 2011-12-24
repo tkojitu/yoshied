@@ -1,0 +1,15 @@
+* New for clean document.
+
+* New for dirty untitled-document:
+
+** No, I don't want to save.
+
+** Yes, I want to save:
+
+<save-as.txt>
+
+* New for dirty titled-document:
+
+** No, I don't want to save.
+
+** Yes, I want to save.

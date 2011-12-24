@@ -1,0 +1,85 @@
+* YoshiEditor
+
+A text editor.
+
+* Road Map
+
++ deindent line by Alt + Backspace
+
++ MiniBuffer
+  + Open
+  + Save As...
+  + Find
+  + Replace
+
++ Go To Line...
+
++ Re-search
+
++ Re-replace
+
++ Drag and Drop
+
+- Frame + ScrollPane + EditorPane
+
+- MenuBar
+  - File menu
+    - New
+    - Open
+    - Save
+    - Save As...
+    - Exit
+  - Edit menu
+    - Undo
+    - Redo
+    - Cut
+    - Copy
+    - Paste
+    - Select All
+
+- YYYYMMDD.txt for "Untitled" file
+
+- Dirty Flag
+
+- Bindings
+
+- Warning to replace with a new file
+
+- Command-line argument to open
+
+- Find
+
+- Replace
+
+- Show SaveAsDialog when Save if document is untitled
+
+- Window Closing Box
+
+- JTextComponent#read and write
+
+- Indentation
+  - Undo
+  - Use replaceSelection()
+  - delete trailing whites
+  - auto-hungry delete
+  + Enter inserts raw "\n"
+  + Ctrl-J inserts indented "\n"
+
+- Undo
+  - Undo inserting words
+  - Undo deleteing words
+  - Undo replacing
+  - Undo paste
+  - End last edit at diamond cursor
+
+- Wrap lines with resizing the window
+
+* Bug
+
+- Show saved filename in the title bar
+- Indent after empty lines
+- Save new document
+- Delete selected string only
++ Don't show file-dialog for new document
++ Show beginning of document when file open
++ Don't delete space before letter.

@@ -1,0 +1,19 @@
+* Save As for untitled document:
+
+** Cancel FileSaveDialog.
+
+** OK FileSaveDialog:
+
+*** No, I don't want to replace.
+
+*** Yes, I want to replace.
+
+* Save As titled document.
+
+** Cancel FileSaveDialog.
+
+** OK FileSaveDialog:
+
+*** No, I don't want to replace.
+
+*** Yes, I want to replace.

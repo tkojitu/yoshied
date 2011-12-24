@@ -1,0 +1,11 @@
+* no arguments
+
+$ jruby YoshiEditor.rb
+
+* pass existing filename
+
+$ jruby YoshiEditor.rb YoshiEditor.rb
+
+* pass non-existing filename
+
+$ jruby YoshiEditor.rb foo

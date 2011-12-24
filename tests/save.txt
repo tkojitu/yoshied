@@ -1,0 +1,9 @@
+* Save for untitled document:
+
+<save-as.txt>
+
+* Save titled document.
+
+* Save for tilted but it has illegal path.
+
+$ jruby YoshiEditor.rb foo/bar.txt
