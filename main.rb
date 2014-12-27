@@ -4,8 +4,10 @@ include Java
 java_import java.awt.BorderLayout
 java_import java.awt.Dimension
 java_import java.awt.Event
+java_import java.awt.Font
 java_import java.awt.event.ActionEvent
 java_import java.awt.event.KeyEvent
+java_import java.lang.System;
 java_import javax.swing.AbstractAction
 java_import javax.swing.Action
 java_import javax.swing.BorderFactory
@@ -38,4 +40,6 @@ require "ReplaceUI"
 require "Undoer"
 
 $yoshi_argv = ARGV.dup
+System.setProperty("awt.useSystemAAFontSettings", "lcd");
+System.setProperty("swing.aatext", "true");
 javax.swing.SwingUtilities.invokeLater(Yoshied::App.new)

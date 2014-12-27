@@ -34,7 +34,7 @@ module Yoshied
       @frame.setJMenuBar(createMenuBar)
       @frame.setContentPane(createContentPane)
       @frame.setDefaultCloseOperation(JFrame::DO_NOTHING_ON_CLOSE)
-      @frame.setPreferredSize(java.awt.Dimension.new(640, 480))
+      @frame.setExtendedState(JFrame::MAXIMIZED_BOTH);
       @frame.addWindowListener(self)
       @frame.pack
       newDocument
@@ -196,6 +196,7 @@ module Yoshied
 
     def createScrollPane
       scrollPane = javax.swing.JScrollPane.new
+      setupScrollBars(scrollPane)
       scrollPane.setViewportView(createMainPane)
       scrollPane.setVerticalScrollBarPolicy(
         ScrollPaneConstants::VERTICAL_SCROLLBAR_ALWAYS)
@@ -205,8 +206,26 @@ module Yoshied
       return scrollPane
     end
 
+    def setupScrollBars(scrollPane)
+      setupScrollBarVertical(scrollPane)
+      setupScrollBarHorizontal(scrollPane)
+    end
+
+    def setupScrollBarVertical(scrollPane)
+      preferred = scrollPane.getVerticalScrollBar.getPreferredSize
+      size = Dimension.new(preferred.width * 2, preferred.height)
+      scrollPane.getVerticalScrollBar.setPreferredSize(size)
+    end
+
+    def setupScrollBarHorizontal(scrollPane)
+      preferred = scrollPane.getHorizontalScrollBar.getPreferredSize
+      size = Dimension.new(preferred.width, preferred.height * 2)
+      scrollPane.getHorizontalScrollBar.setPreferredSize(size)
+    end
+
     def createMainPane
       @mainPane = javax.swing.JEditorPane.new
+      @mainPane.setFont(Font.new("Ariel", Font::PLAIN, 16));
       initDocument(@mainPane)
       @keyBinder.addBindings(@mainPane)
       return @mainPane
