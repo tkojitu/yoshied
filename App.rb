@@ -219,20 +219,13 @@ module Yoshied
     end
 
     def createSaveButton
-      config = @keyBinder.menuKeyConfigSave
-      config[:text] = "Save"
-      return createButton(config)
-    end
-
-    def createButton(config)
       button = JButton.new
-      setupButton(button, config)
+      button.setText("Save")
+      button.addActionListener(proc{|event|
+        onMenuItemSave
+        @mainPane.requestFocusInWindow
+      })
       return button
-    end
-
-    def setupButton(menuItem, config)
-      config.key?(:text) and menuItem.setText(config[:text])
-      config.key?(:action) and menuItem.addActionListener(config[:action])
     end
 
     def initDocument(editorPane)
