@@ -190,6 +190,7 @@ module Yoshied
       contentPane = JPanel.new
       contentPane.setLayout(BorderLayout.new)
       contentPane.add(createScrollPane, BorderLayout::CENTER)
+      contentPane.add(createToolbar, BorderLayout::SOUTH);
       return contentPane
     end
 
@@ -209,6 +210,29 @@ module Yoshied
       initDocument(@mainPane)
       @keyBinder.addBindings(@mainPane)
       return @mainPane
+    end
+
+    def createToolbar
+      toolbar = JPanel.new
+      toolbar.add(createSaveButton)
+      return toolbar
+    end
+
+    def createSaveButton
+      config = @keyBinder.menuKeyConfigSave
+      config[:text] = "Save"
+      return createButton(config)
+    end
+
+    def createButton(config)
+      button = JButton.new
+      setupButton(button, config)
+      return button
+    end
+
+    def setupButton(menuItem, config)
+      config.key?(:text) and menuItem.setText(config[:text])
+      config.key?(:action) and menuItem.addActionListener(config[:action])
     end
 
     def initDocument(editorPane)
